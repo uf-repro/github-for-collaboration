@@ -15,7 +15,11 @@ This workshop will introduce how to use Git and GitHub as a platform for collabo
 ## Learning Outcomes
 
 By the end of the workshop, participants will be able to:
-
+* describe how merge conflicts originate and how to resolve them
+* create and navigate branches on GitHub and using GitHub Desktop
+* create and merge pull requests
+* apply the "GitHub flow" workflow for collaborating
+* understand "forks" and open-source-community development on GitHub
 
 ## References
 
