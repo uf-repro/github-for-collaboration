@@ -50,31 +50,135 @@ class: inverse, center, middle
 ### (updated: `r Sys.Date()`)
 
 ---
-
 # Motivations
 
-* One of the most powerful advantages for using version control is managing collaborative work.
-* Git is a flexible tool that accommodates many different styles of collaboration...
-* "GitHub flow" is a lightweight workflow that scales well for small research teams and is not too complex
+* One of the advantages for using version control is managing collaborative work.
+* Git is a flexible tool that accommodates many different styles of collaboration... not all of these styles are suitable for small research teams.
+* "GitHub flow" is a workflow that is lightweight and scales well for individuals and small teams.
 
 ---
-
 # Learning Outcomes
 
 * describe how merge conflicts originate and how to resolve them
+* apply the "GitHub flow" workflow for collaborating
 * create and navigate branches on GitHub and using GitHub Desktop
 * create and resolve issues
 * create and merge pull requests
-* apply the "GitHub flow" workflow for collaborating
 * understand "forks" and open-source-community development on GitHub
----
 
+---
+# Prerequisites
+
+This lesson assumes you:
+* have some familiarity making *repos* and *commits*
+* know how to synchronize repos from your computer to GitHub
+
+---
 class: inverse, center, middle
 
-# 
+# Merge Conflicts
 
 ---
+# Inviting Collaborators
 
+* I have a github repo, and would like to give my collaborator access to work on the project.
+* From the github repo page:
+  - `Settings` -> `Manage access`
+  - `Invite a collaborator`
+
+---
+```{r, echo = FALSE, fig.cap = "A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'."}
+knitr::include_graphics("github-manage-access.png")
+```
+
+---
+# A Simple Workflow
+
+Two people, A and B, are working together on one repo in GitHub:
+* A makes commits, A pushes the new commits to GitHub.
+* B pulls the latest commits from A, works on new commits, and pushes their new commits back to GitHub.
+* A pulls the latest commits from B, works on new commits, etc.
+
+---
+# What happens if you forget to pull?
+
+You get a warning when you try to push to GitHub.
+
+```{r, echo = FALSE, fig.cap = "A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'"}
+knitr::include_graphics("newer-commits-warning.png")
+```
+
+---
+# Merging
+
+* a `git merge` combine the changes from diverging commits:
+  - suppose A and B start with commit: `{orig}`
+  - A makes a commit, `{a}`, with changes
+  - B makes a commit, `{b}`, with changes
+  - `git merge` combines `{a}` and `{b}` into a new commit `{c}`, that contains both sets of changes.
+  
+---
+# Merging (automatically)
+
+* if the changes are in different files
+
+  OR different parts of the same files
+  - git is generally able to combine the changes without further intervention
+
+* if git is unable to merge automatically, then it is a `merge conflict`
+
+---
+# Resolving merge conflicts
+
+* when git cannot combine the changes automatically, you must manually create the merged file:
+```{r, echo = FALSE, fig.cap = "A screenshot of BBedit showing the merge conflict. Line 6 is '<<<<<<< HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '>>>>>>>' followed by a hash, indicating the end of the second version."}
+knitr::include_graphics("merge-conflict.png")
+```
+
+---
+# Resolving merge conflicts 2
+
+* After the conflicts are resolved, you need to create a new commit with the merged edits.
+* This merged commit can then be pushed to github without issue.
+* For non-text files, you may need to revert back to one or the other version (whichever is correct)
+
+---
+# Summary
+
+* This approach works pretty well when there is one primary contributor, and collaborators rarely make changes.
+  - otherwise everyone needs to be constantly pulling and merging, contacting each other through separate channels to let them know you are done pushing changes to GitHub, etc.
+
+---
+class: inverse, center, middle
+
+# GitHub Flow
+
+---
+# Essentials of GitHub Flow
+
+* use git `branches` to manage simultaneous work in different directions
+* `merge` commits back to the primary branch 
+
+```{r, echo = FALSE, fig.cap = "A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works."}
+knitr::include_graphics("github-flow.png")
+```
+
+---
+class: inverse, center, middle
+
+# Navigating Branches
+
+---
+class: inverse, center, middle
+
+# Issues and Pull Requests
+
+---
+class: inverse, center, middle
+
+# Community-oriented Development on GitHub
+
+---
 # Thanks
 
 * Let me know what content you'd like to see
