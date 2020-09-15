@@ -17,7 +17,7 @@ class: inverse, center, middle
 # Using GitHub for Collaboration
 ### Hao Ye
 ### Health Science Center Libraries, University of Florida
-### (updated: 2020-09-14)
+### (updated: 2020-09-15)
 
 ---
 # Motivations
@@ -32,7 +32,6 @@ class: inverse, center, middle
 * describe how merge conflicts originate and how to resolve them
 * apply the "GitHub flow" workflow for collaborating
 * create and navigate branches on GitHub and using GitHub Desktop
-* create and resolve issues
 * create and merge pull requests
 * understand "forks" and open-source-community development on GitHub
 
@@ -120,10 +119,18 @@ class: inverse, center, middle
 ---
 # Essentials of GitHub Flow
 
-* use git `branches` to manage simultaneous work in different directions
-* `merge` commits back to the primary branch 
+Manage work using branches - `merge` branches back to the primary branch when ready.
 
 ![A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works.](github-flow.png)
+
+---
+# Steps
+
+1. Create a branch and switch to it.
+2. Add commits with desired changes.
+3. Open a pull request (PR).
+4. Review the PR if necessary, and merge.
+5. Delete branch if done.
 
 ---
 class: inverse, center, middle
@@ -131,14 +138,104 @@ class: inverse, center, middle
 # Navigating Branches
 
 ---
+# What is a Branch?
+
+* A `branch` is a label for a set of commits.
+
+&lt;div class="figure"&gt;
+&lt;img src="git-branch.svg" alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%" /&gt;
+&lt;p class="caption"&gt;A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits.&lt;/p&gt;
+&lt;/div&gt;
+.small[[img: https://www.atlassian.com/git/tutorials/using-branches]]
+
+---
+# How do branches work?
+
+* By default, you are in the primary branch.
+  - each commit has changes from the previous commit
+  - a linear sequence of versions of the project
+* When you want to make changes and commits without disrupting the primary branch:
+  - create a new branch
+  - merge when ready
+
+---
+# Creating new branches (GitHub)
+
+![screenshot of the GitHub interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches.](github-new-branch.png)
+
+---
+class: center, middle
+
+# DEMO
+
+---
+# Creating new branches (GitHub Desktop)
+
+![screenshot of the GitHub Desktop interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches.](github-desktop-new-branch.png)
+
+---
+class: center, middle
+
+# DEMO
+
+---
 class: inverse, center, middle
 
-# Issues and Pull Requests
+# Merging Branches
+
+---
+# Merging (branches)
+
+* Nearly the same as merging commits:
+  - merge the last commit on another branch to the current branch.
+
+1. switch to the branch that will keep the merged result
+2. merge from the other branch
+
+---
+class: center, middle
+
+# DEMO (GitHub Desktop)
+
+---
+# Pull Request (GitHub)
+
+* recommended practice for merges on GitHub
+* lets you document the merge
+  - can request official "review"
+  - other collaborators can comment, make further changes
+
+---
+class: center, middle
+
+# DEMO (GitHub)
 
 ---
 class: inverse, center, middle
 
 # Community-oriented Development on GitHub
+
+---
+# Issues
+
+* reported bugs, feature requests, etc.
+* anyone can contribute to discussion
+* can be referred to by number in commits and pull requests
+
+---
+class: center, middle
+
+# DEMO
+
+---
+# Forks
+
+* How do you contribute to other people's projects?
+  - Fork = clone a repo on GitHub
+  - Forks retain memory of original repo (and cannot have their own issues)
+  - Pull Requests can merge from across forks.
+
+* "Fork and PR" is a common phrase indicating how one should contribute to an open-source project.
 
 ---
 # Thanks
