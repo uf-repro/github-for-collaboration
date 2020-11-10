@@ -19,6 +19,9 @@
 * ["Friendly Github Workshop"](https://kirstiejane.github.io/friendly-github-intro/)
   - website from Kirstie Jane Whitaker on getting started in GitHub
 
+* "Developing Collaborative Documents: Friendly Introduction to GitHub" [slides](https://docs.google.com/presentation/d/1_bmRZcLwQrUkVTAMvq7W_x4ML_aphSwVEnkLrDy-Fd4/edit?usp=sharing) and [video](https://youtu.be/QRUvQgKbVZQ)
+  - from Open Life Science training materials on GitHub and GitHub Pages lesson
+  
 ## GitHub flow and debugging
 
 * ["Understanding the GitHub flow"](https://guides.github.com/introduction/flow/)
