@@ -124,21 +124,19 @@
 
 <div id="syllabus" class="section level1">
 
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2020-11-09)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2020-11-26)</p>
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#intro" class="anchor"></a>Intro</h2>
 <ul>
-<li>
-<p>Motivations</p>
+<li>Motivations
 <ul>
 <li>One of the advantages for using version control is managing collaborative work.</li>
 <li>Git is a flexible tool that accommodates many different styles of collaboration… not all of these styles are suitable for small research teams.</li>
 <li>“GitHub flow” is a workflow that is lightweight and scales well for individuals and small teams.</li>
 </ul>
 </li>
-<li>
-<p>Learning Outcomes</p>
+<li>Learning Outcomes
 <ul>
 <li>describe how merge conflicts originate and how to resolve them</li>
 <li>apply the “GitHub flow” workflow for collaborating</li>
@@ -147,9 +145,7 @@
 <li>understand “forks” and open-source-community development on GitHub</li>
 </ul>
 </li>
-<li>
-<p>Prerequisites</p>
-<p>This lesson assumes you:</p>
+<li>Prerequisites This lesson assumes you:
 <ul>
 <li>have some familiarity making <em>repos</em> and <em>commits</em>
 </li>
@@ -162,8 +158,7 @@
 <h2 class="hasAnchor">
 <a href="#merge-conflicts" class="anchor"></a>Merge Conflicts</h2>
 <ul>
-<li>
-<p>Inviting Collaborators</p>
+<li>Inviting Collaborators
 <ul>
 <li>I have a github repo, and would like to give my collaborator access to work on the project.</li>
 <li>From the github repo page:
@@ -171,28 +166,23 @@
 <li>
 <code>Settings</code> -&gt; <code>Manage access</code>
 </li>
-<li><code>Invite a collaborator</code></li>
-</ul>
-</li>
-</ul>
-<p><img src="slides/github-manage-access.png" alt="A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text ‘Invite a collaborator’."></p>
-</li>
 <li>
-<p>A Simple Workflow</p>
-<p>Two people, A and B, are working together on one repo in GitHub:</p>
+<code>Invite a collaborator</code> <img src="github-manage-access.png" alt="A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text ‘Invite a collaborator’.">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A Simple Workflow Two people, A and B, are working together on one repo in GitHub:
 <ul>
 <li>A makes commits, A pushes the new commits to GitHub.</li>
 <li>B pulls the latest commits from A, works on new commits, and pushes their new commits back to GitHub.</li>
 <li>A pulls the latest commits from B, works on new commits, etc.</li>
 </ul>
 </li>
-<li>
-<p>What happens if you forget to pull?</p>
-<p>You get a warning when you try to push to GitHub.</p>
-<p><img src="slides/newer-commits-warning.png" alt="A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads ‘Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.’"></p>
+<li>What happens if you forget to pull? You get a warning when you try to push to GitHub. <img src="newer-commits-warning.png" alt="A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads ‘Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.’">
 </li>
-<li>
-<p>Merging</p>
+<li>Merging
 <ul>
 <li>a <code>git merge</code> combine the changes from diverging commits:
 <ul>
@@ -206,36 +196,31 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Merging (automatically)</p>
+<li>Merging (automatically)
 <ul>
-<li>
-<p>if the changes are in different files</p>
-<p>OR different parts of the same files</p>
+<li>if the changes are in different files OR different parts of the same files
 <ul>
 <li>git is generally able to combine the changes without further intervention</li>
 </ul>
 </li>
-<li><p>if git is unable to merge automatically, then it is a <code>merge conflict</code></p></li>
+<li>if git is unable to merge automatically, then it is a <code>merge conflict</code>
+</li>
 </ul>
 </li>
-<li>
-<p>Resolving merge conflicts</p>
+<li>Resolving merge conflicts
 <ul>
-<li>when git cannot combine the changes automatically, you must manually create the merged file: <img src="slides/merge-conflict.png" alt="A screenshot of BBedit showing the merge conflict. Line 6 is ‘&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD’`’ indicating the start of one version of the file. Line 8 is ‘=======’ indicating the end of one version and the beginning of the next. Line 10 shows ‘&gt;&gt;&gt;&gt;&gt;&gt;&gt;’ followed by a hash, indicating the end of the second version.">
+<li>when git cannot combine the changes automatically, you must manually create the merged file: <img src="merge-conflict.png" alt="A screenshot of BBedit showing the merge conflict. Line 6 is ‘&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD’`’ indicating the start of one version of the file. Line 8 is ‘=======’ indicating the end of one version and the beginning of the next. Line 10 shows ‘&gt;&gt;&gt;&gt;&gt;&gt;&gt;’ followed by a hash, indicating the end of the second version.">
 </li>
 </ul>
 </li>
-<li>
-<p>Resolving merge conflicts 2</p>
+<li>Resolving merge conflicts 2
 <ul>
 <li>After the conflicts are resolved, you need to create a new commit with the merged edits.</li>
 <li>This merged commit can then be pushed to github without issue.</li>
 <li>For non-text files, you may need to revert back to one or the other version (whichever is correct)</li>
 </ul>
 </li>
-<li>
-<p>Summary</p>
+<li>Summary
 <ul>
 <li>This approach works pretty well when there is one primary contributor, and collaborators rarely make changes.
 <ul>
@@ -250,13 +235,9 @@
 <h2 class="hasAnchor">
 <a href="#github-flow" class="anchor"></a>GitHub Flow</h2>
 <ul>
-<li>
-<p>Essentials of GitHub Flow</p>
-<p>Manage work using branches - <code>merge</code> branches back to the primary branch when ready.</p>
-<p><img src="slides/github-flow.png" alt="A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the ‘GitHub flow’ workflow works."></p>
+<li>Essentials of GitHub Flow Manage work using branches - <code>merge</code> branches back to the primary branch when ready. <img src="github-flow.png" alt="A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the ‘GitHub flow’ workflow works.">
 </li>
-<li>
-<p>Steps</p>
+<li>Steps
 <ol>
 <li>Create a branch and switch to it.</li>
 <li>Add commits with desired changes.</li>
@@ -271,15 +252,13 @@
 <h2 class="hasAnchor">
 <a href="#navigating-branches" class="anchor"></a>Navigating Branches</h2>
 <ul>
-<li>
-<p>What is a Branch?</p>
+<li>What is a Branch?
 <ul>
-<li>A <code>branch</code> is a label for a set of commits.</li>
-</ul>
-<p><img src="slides/git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%"> img: <a href="https://www.atlassian.com/git/tutorials/using-branches" class="uri">https://www.atlassian.com/git/tutorials/using-branches</a></p>
+<li>A <code>branch</code> is a label for a set of commits. <img src="git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%"> img: <a href="https://www.atlassian.com/git/tutorials/using-branches" class="uri">https://www.atlassian.com/git/tutorials/using-branches</a>
 </li>
-<li>
-<p>How do branches work?</p>
+</ul>
+</li>
+<li>How do branches work?
 <ul>
 <li>By default, you are in the primary branch.
 <ul>
@@ -295,24 +274,19 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Creating new branches (GitHub)</p>
-<p><img src="slides/github-new-branch.png" alt="screenshot of the GitHub interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches."></p>
+<li>Creating new branches (GitHub) <img src="github-new-branch.png" alt="screenshot of the GitHub interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches.">
 </li>
-<li><p>DEMO</p></li>
-<li>
-<p>Creating new branches (GitHub Desktop)</p>
-<p><img src="slides/github-desktop-new-branch.png" alt="screenshot of the GitHub Desktop interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches."></p>
+<li>DEMO</li>
+<li>Creating new branches (GitHub Desktop) <img src="github-desktop-new-branch.png" alt="screenshot of the GitHub Desktop interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches.">
 </li>
-<li><p>DEMO</p></li>
+<li>DEMO</li>
 </ul>
 </div>
 <div id="merging-branches" class="section level2">
 <h2 class="hasAnchor">
 <a href="#merging-branches" class="anchor"></a>Merging Branches</h2>
 <ul>
-<li>
-<p>Merging (branches)</p>
+<li>Merging (branches)
 <ul>
 <li>Nearly the same as merging commits:
 <ul>
@@ -325,9 +299,8 @@
 <li>merge from the other branch</li>
 </ol>
 </li>
-<li><p>DEMO (GitHub Desktop)</p></li>
-<li>
-<p>Pull Request (GitHub)</p>
+<li>DEMO (GitHub Desktop)</li>
+<li>Pull Request (GitHub)
 <ul>
 <li>recommended practice for merges on GitHub</li>
 <li>lets you document the merge
@@ -338,41 +311,37 @@
 </li>
 </ul>
 </li>
-<li><p>DEMO (GitHub)</p></li>
+<li>DEMO (GitHub)</li>
 </ul>
 </div>
 <div id="community-oriented-development-on-github" class="section level2">
 <h2 class="hasAnchor">
 <a href="#community-oriented-development-on-github" class="anchor"></a>Community-oriented Development on GitHub</h2>
 <ul>
-<li>
-<p>Issues</p>
+<li>Issues
 <ul>
 <li>reported bugs, feature requests, etc.</li>
 <li>anyone can contribute to discussion</li>
 <li>can be referred to by number in commits and pull requests</li>
 </ul>
 </li>
-<li><p>DEMO</p></li>
-<li>
-<p>Forks</p>
+<li>DEMO</li>
+<li>Forks
 <ul>
-<li>How do you contribute to other people’s projects?
+<li>
+<p>How do you contribute to other people’s projects?</p>
 <ul>
 <li>Fork = clone a repo on GitHub</li>
 <li>Forks retain memory of original repo (and cannot have their own issues)</li>
 <li>Pull Requests can merge from across forks.</li>
 </ul>
 </li>
-<li>“Fork and PR” is a common phrase indicating how one should contribute to an open-source project.</li>
-</ul>
+<li>
+<p>“Fork and PR” is a common phrase indicating how one should contribute to an open-source project.</p>
+<h2 id="thanks">Thanks</h2>
 </li>
 </ul>
-</div>
-<div id="thanks" class="section level2">
-<h2 class="hasAnchor">
-<a href="#thanks" class="anchor"></a>Thanks</h2>
-<ul>
+</li>
 <li>Let me know what content you’d like to see</li>
 <li>Contact me for additional questions or consultation requests!</li>
 <li>Check back in on the libguide for more modules and contact info:
