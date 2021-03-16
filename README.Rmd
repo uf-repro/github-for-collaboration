@@ -48,8 +48,6 @@ jsonlite::write_json(zenodo_json, ".zenodo.json",
 
 `r lesson_description`
 
-*Attendees will be expected to have basic familiarity with Git and Github, such as via https://uf-repro.github.io/friendly-github-intro/*
-
 ## Prerequisites
 ```{r, include = FALSE}
 prereqs <- c("have some familiarity making *repos* and *commits*", 

@@ -18,12 +18,9 @@ collaboration. Attendees will learn the essentials of Git branches,
 merge conflicts and how to resolve them, and the GitHub Flow workflow
 practice for collaboration.
 
-*Attendees will be expected to have basic familiarity with Git and
-Github, such as via <https://uf-repro.github.io/friendly-github-intro/>*
-
 ## Prerequisites
 
-By the end of the workshop, participants will be able to:
+This lesson assumes you:
 
   - have some familiarity making *repos* and *commits*
   - know how to synchronize repos from your computer to GitHub
