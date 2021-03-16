@@ -50,6 +50,23 @@ jsonlite::write_json(zenodo_json, ".zenodo.json",
 
 *Attendees will be expected to have basic familiarity with Git and Github, such as via https://uf-repro.github.io/friendly-github-intro/*
 
+## Prerequisites
+```{r, include = FALSE}
+prereqs <- c("have some familiarity making *repos* and *commits*", 
+             "know how to synchronize repos from your computer to GitHub")
+prereqs_text <- paste0("* ", prereqs, collapse = "\n")
+desc::desc_set("prerequisites", prereqs_text)
+
+prior_course <- "https://uf-repro.github.io/friendly-github-intro/"
+desc::desc_set("priorCourse", prior_course)
+```
+
+This lesson assumes you:
+
+`r prereqs_text`
+
+Such as via `r prior_course`
+
 ## Learning Outcomes
 
 ```{r, include = FALSE}
@@ -65,3 +82,4 @@ desc::desc_set("learningOutcomes", outcomes_text)
 By the end of the workshop, participants will be able to:
 
 `r outcomes_text`
+

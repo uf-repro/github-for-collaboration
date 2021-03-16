@@ -1,5 +1,5 @@
 ---
-title: "Using GitHub for Collaboration"
+title: "`r desc::desc_get('Title', '..')`"
 author: "Hao Ye"
 institute: "Health Science Center Libraries, University of Florida"
 date: "(updated: `r Sys.Date()`)"
@@ -45,7 +45,7 @@ style_mono_accent(
 ```
 class: inverse, center, middle
 
-# `r rmarkdown::metadata$title`
+# `r desc::desc_get('Title', '..')`
 ### `r rmarkdown::metadata$author`
 ### `r rmarkdown::metadata$institute`
 ### (updated: `r Sys.Date()`)
@@ -60,18 +60,15 @@ class: inverse, center, middle
 ---
 # Learning Outcomes
 
-* describe how merge conflicts originate and how to resolve them
-* apply the "GitHub flow" workflow for collaborating
-* create and navigate branches on GitHub and using GitHub Desktop
-* create and merge pull requests
-* understand "forks" and open-source-community development on GitHub
+`r gsub("\n ", "\n", desc::desc_get("learningOutcomes"))`
 
 ---
 # Prerequisites
 
 This lesson assumes you:
-* have some familiarity making *repos* and *commits*
-* know how to synchronize repos from your computer to GitHub
+`r gsub("\n ", "\n", desc::desc_get("prerequisites"))`
+
+Such as via `r desc::desc_get("priorCourse")`
 
 ---
 class: inverse, center, middle

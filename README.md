@@ -21,6 +21,15 @@ practice for collaboration.
 *Attendees will be expected to have basic familiarity with Git and
 Github, such as via <https://uf-repro.github.io/friendly-github-intro/>*
 
+## Prerequisites
+
+By the end of the workshop, participants will be able to:
+
+  - have some familiarity making *repos* and *commits*
+  - know how to synchronize repos from your computer to GitHub
+
+Such as via <https://uf-repro.github.io/friendly-github-intro/>
+
 ## Learning Outcomes
 
 By the end of the workshop, participants will be able to:
