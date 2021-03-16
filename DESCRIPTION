@@ -18,3 +18,8 @@ Imports:
     xaringan,
     xaringanthemer
 URL: https://github.com/uf-repro/github-for-collaboration
+learningOutcomes: * describe how merge conflicts originate and how to resolve them
+ * apply the "GitHub flow" workflow for collaborating
+ * create and navigate branches on GitHub and using GitHub Desktop
+ * create and merge pull requests
+ * understand "forks" and open-source-community development on GitHub

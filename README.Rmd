@@ -1,0 +1,67 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+```{r, include = FALSE}
+
+lesson_title <- "Using GitHub for Collaboration"
+lesson_description <- "This workshop will introduce how to use Git and GitHub as a platform for collaboration. Attendees will learn the essentials of Git branches, merge conflicts and how to resolve them, and the GitHub Flow workflow practice for collaboration."
+lesson_keywords <- c("Open Educational Resources",
+                     "Research Support Skills",
+                     "Git",
+                     "GitHub",
+                     "Version Control",
+                     "Collaboration", 
+                     "Workshop")
+
+desc::desc_set(Title = lesson_title, 
+               Description = lesson_description)
+
+zenodo_json <- jsonlite::read_json(".zenodo.json")
+zenodo_json$title <- lesson_title
+zenodo_json$description <- lesson_description
+zenodo_json$keywords <- as.list(lesson_keywords)
+jsonlite::write_json(zenodo_json, ".zenodo.json", 
+                     auto_unbox = TRUE, pretty = TRUE)
+```
+
+# `r lesson_title`
+
+<!-- badges: start -->
+[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/github-for-collaboration/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/github-for-collaboration/actions?query=workflow%3Apkgdown)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4029660.svg)](https://doi.org/10.5281/zenodo.4029660)
+
+<!-- badges: end -->
+
+## Description
+
+`r lesson_description`
+
+*Attendees will be expected to have basic familiarity with Git and Github, such as via https://uf-repro.github.io/friendly-github-intro/*
+
+## Learning Outcomes
+
+```{r, include = FALSE}
+learning_outcomes <- c("describe how merge conflicts originate and how to resolve them", 
+                       "apply the \"GitHub flow\" workflow for collaborating", 
+                       "create and navigate branches on GitHub and using GitHub Desktop", 
+                       "create and merge pull requests", 
+                       "understand \"forks\" and open-source-community development on GitHub")
+outcomes_text <- paste0("* ", learning_outcomes, collapse = "\n")
+desc::desc_set("learningOutcomes", outcomes_text)
+```
+
+By the end of the workshop, participants will be able to:
+
+`r outcomes_text`

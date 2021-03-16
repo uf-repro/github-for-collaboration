@@ -1,22 +1,23 @@
 {
-"title": "Using GitHub for Collaboration",
-"creators": [
+  "title": "Using GitHub for Collaboration",
+  "creators": [
     {
       "affiliation": "University of Florida",
       "name": "Hao Ye",
       "orcid": "0000-0002-8630-1458"
     }
-],
-    "description": "This workshop will introduce how to use Git and GitHub as a platform for collaboration. Attendees will learn the essentials of Git branches, merge conflicts and how to resolve them, and the GitHub Flow workflow practice for collaboration.",
-    "keywords": [
+  ],
+  "description": "This workshop will introduce how to use Git and GitHub as a platform for collaboration. Attendees will learn the essentials of Git branches, merge conflicts and how to resolve them, and the GitHub Flow workflow practice for collaboration.",
+  "keywords": [
     "Open Educational Resources",
     "Research Support Skills",
     "Git",
     "GitHub",
     "Version Control",
+    "Collaboration",
     "Workshop"
   ],
-    "access_right": "open",
-    "license": "CC-BY-4.0",
-    "upload_type": "lesson"
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "upload_type": "lesson"
 }
