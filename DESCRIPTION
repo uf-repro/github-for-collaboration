@@ -1,6 +1,6 @@
 Package: github4collaboration
 Title: Using GitHub for Collaboration
-Version: 1.0.1
+Version: 1.1.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
