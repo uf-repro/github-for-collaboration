@@ -23,8 +23,8 @@ class: inverse, center, middle
 # Motivations
 
 * One of the advantages for using version control is managing collaborative work.
-* Git is a flexible tool that accommodates many different styles of collaboration... not all of these styles are suitable for small research teams.
-* "GitHub flow" is a workflow that is lightweight and scales well for individuals and small teams.
+* Git is a tool that accommodates many different styles of collaboration... not all of these are suitable for small research teams.
+* "GitHub flow" is a lightweight workflow that scales well for individuals and small teams.
 
 ---
 # Learning Outcomes
@@ -78,12 +78,12 @@ You get a warning when you try to push to GitHub.
 ---
 # Merging
 
-* a `git merge` combine the changes from diverging commits:
-  - suppose A and B start with commit: `{orig}`
-  - A makes a commit, `{a}`, with changes
-  - B makes a commit, `{b}`, with changes
+* `git merge` combines the changes from diverging commits:
+  - A and B start with commit: `{orig}`
+  - A makes changes to `{orig}` &amp; commits `{a}`
+  - B makes changes to `{orig}` &amp; commits `{b}`
   - `git merge` combines `{a}` and `{b}` into a new commit `{c}`, that contains both sets of changes.
-  
+
 ---
 # Merging (automatically)
 
@@ -105,13 +105,17 @@ You get a warning when you try to push to GitHub.
 
 * After the conflicts are resolved, you need to create a new commit with the merged edits.
 * This merged commit can then be pushed to github without issue.
-* For non-text files, you may need to revert back to one or the other version (whichever is correct)
+* For non-text files, you need to choose a version of the file for the merge commit.
+  - e.g. open an image editor to edit the image file and incorporate changes from the two separate commits.
 
 ---
 # Summary
 
-* This approach works pretty well when there is one primary contributor, and collaborators rarely make changes.
-  - otherwise everyone needs to be constantly pulling and merging, contacting each other through separate channels to let them know you are done pushing changes to GitHub, etc.
+* This approach works pretty well when:
+  - there is **one primary contributor**
+  - **collaborators make changes rarely**
+  - everyone knows the steps to pull, commit, push.
+  - everyone communicates updates that others should pull from GitHub.
 
 ---
 class: inverse, center, middle
@@ -121,7 +125,8 @@ class: inverse, center, middle
 ---
 # Essentials of GitHub Flow
 
-Manage work using branches - `merge` branches back to the primary branch when ready.
+* Use `branches` to store work progress. 
+* Merge branches back to the primary branch when the work for that branch is complete.
 
 ![A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works.](github-flow.png)
 
@@ -148,14 +153,22 @@ class: inverse, center, middle
 .small[[img: https://www.atlassian.com/git/tutorials/using-branches]]
 
 ---
+class: center, middle
+
+If Git is a time machine that lets you navigate to different times (commits), then 
+
+**branches are alternate timelines**.
+
+---
 # How do branches work?
 
 * By default, you are in the primary branch.
-  - each commit has changes from the previous commit
-  - a linear sequence of versions of the project
-* When you want to make changes and commits without disrupting the primary branch:
+  - each commit includes changes from the previous commit
+  - result: a sequence of project versions
+* When you want multiple sequences of project versions:
   - create a new branch
   - merge when ready
+  (or discard useless branches)
 
 ---
 # Creating new branches (GitHub)
@@ -188,8 +201,8 @@ class: inverse, center, middle
 * Nearly the same as merging commits:
   - merge the last commit on another branch to the current branch.
 
-1. switch to the branch that will keep the merged result
-2. merge from the other branch
+1. **switch to the branch** that will hold the merged result
+2. **merge from** the other branch
 
 ---
 class: center, middle
@@ -232,9 +245,15 @@ class: center, middle
 * How do you contribute to other people's projects?
   - Fork = clone a repo on GitHub
   - Forks retain memory of original repo (and cannot have their own issues)
-  - Pull Requests can merge from across forks.
+  - Pull Requests can include merges from across forks.
 
-* "Fork and PR" is a common phrase indicating how one should contribute to an open-source project.
+---
+# Contributing to OS
+
+Combining this all together, "Fork and PR" is a workflow for contributing to someone else's project:
+1. fork a repo to your GitHub account
+2. make changes that you want on your GitHub account
+3. create a pull request to ask for those changes to be merged into the original project repo
 
 ---
 # Thanks
