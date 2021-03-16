@@ -41,9 +41,9 @@ jobs:
       - name: Install package
         run: R CMD INSTALL .
 
-      - name: Generate syllabus
+      - name: Generate notes
         run: |
-          RMDconverter::process_slides("slides/slides.Rmd", out_file = "syllabus.md")
+          RMDconverter::process_slides("slides/slides.Rmd", out_file = "notes.md")
         shell: Rscript {0}
 
       - name: Render slides
