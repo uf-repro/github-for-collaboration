@@ -191,6 +191,8 @@ knitr::include_graphics("git-branch.svg")
 ---
 class: center, middle
 
+# 
+
 If Git is a time machine that lets you navigate to different times (commits), then 
 
 **branches are alternate timelines**.
