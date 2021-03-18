@@ -38,7 +38,6 @@ style_mono_accent(
                               "margin-block-end" = "0.5em"), 
                    "pre" = list("margin-top" = "0.5em", 
                               "margin-bottom" = "0.5em"), 
-                   ".caption" = list("display" = "none"),
                    ".small" = list("font-size" = "80%")), 
   link_color = "#339944"
 )
@@ -84,7 +83,7 @@ class: inverse, center, middle
   - `Invite a collaborator`
 
 ---
-```{r, echo = FALSE, fig.cap = "A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'."}
+```{r, echo = FALSE, fig.alt = "A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'."}
 knitr::include_graphics("github-manage-access.png")
 ```
 
@@ -101,7 +100,7 @@ Two people, A and B, are working together on one repo in GitHub:
 
 You get a warning when you try to push to GitHub.
 
-```{r, echo = FALSE, fig.cap = "A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'"}
+```{r, echo = FALSE, fig.alt = "A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'"}
 knitr::include_graphics("newer-commits-warning.png")
 ```
 
@@ -128,7 +127,7 @@ knitr::include_graphics("newer-commits-warning.png")
 # Resolving merge conflicts
 
 * when git cannot combine the changes automatically, you must manually create the merged file:
-```{r, echo = FALSE, fig.cap = "A screenshot of BBedit showing the merge conflict. Line 6 is '<<<<<<< HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '>>>>>>>' followed by a hash, indicating the end of the second version."}
+```{r, echo = FALSE, fig.alt = "A screenshot of BBedit showing the merge conflict. Line 6 is '<<<<<<< HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '>>>>>>>' followed by a hash, indicating the end of the second version."}
 knitr::include_graphics("merge-conflict.png")
 ```
 
@@ -160,7 +159,7 @@ class: inverse, center, middle
 * Use `branches` to store work progress. 
 * Merge branches back to the primary branch when the work for that branch is complete.
 
-```{r, echo = FALSE, fig.cap = "A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works."}
+```{r, echo = FALSE, fig.alt = "A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works."}
 knitr::include_graphics("github-flow.png")
 ```
 
@@ -183,7 +182,7 @@ class: inverse, center, middle
 
 * A `branch` is a label for a set of commits.
 
-```{r, echo = FALSE, out.width = "80%", fig.cap = "A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits."}
+```{r, echo = FALSE, out.width = "80%", fig.alt = "A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits."}
 knitr::include_graphics("git-branch.svg")
 ```
 .small[[img: https://www.atlassian.com/git/tutorials/using-branches]]
@@ -211,7 +210,7 @@ If Git is a time machine that lets you navigate to different times (commits), th
 ---
 # Creating new branches (GitHub)
 
-```{r, echo = FALSE, fig.cap = "screenshot of the GitHub interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches."}
+```{r, echo = FALSE, fig.alt = "screenshot of the GitHub interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches."}
 knitr::include_graphics("github-new-branch.png")
 ```
 
@@ -223,7 +222,7 @@ class: center, middle
 ---
 # Creating new branches (GitHub Desktop)
 
-```{r, echo = FALSE, fig.cap = "screenshot of the GitHub Desktop interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches."}
+```{r, echo = FALSE, fig.alt = "screenshot of the GitHub Desktop interface, when clicking on the pulldown menu to switch branches; this interface also enables one to create new branches."}
 knitr::include_graphics("github-desktop-new-branch.png")
 ```
 
