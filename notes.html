@@ -129,15 +129,15 @@
 
 <div id="syllabus" class="section level1">
 
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2021-03-18)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2021-07-13)</p>
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
-<a href="#intro" class="anchor"></a>Intro</h2>
+<a href="#intro" class="anchor" aria-hidden="true"></a>Intro</h2>
 <ul>
 <li>Motivations
 <ul>
-<li>One of the advantages for using version control is managing collaborative work.</li>
-<li>Git is a tool that accommodates many different styles of collaboration… not all of these are suitable for small research teams.</li>
+<li>Version control can help you manage collaborative work.</li>
+<li>There are many ways to collaborate using Git… not all of these are suitable for small research teams!</li>
 <li>“GitHub flow” is a lightweight workflow that scales well for individuals and small teams.</li>
 </ul>
 </li>
@@ -154,14 +154,15 @@
 <ul>
 <li>have some familiarity making <em>repos</em> and <em>commits</em>
 </li>
-<li>know how to synchronize repos from your computer to GitHub Such as via https://uf-repro.github.io/friendly-github-intro/</li>
+<li>know how to synchronize repos from your computer to GitHub Such as via <a href="https://uf-repro.github.io/friendly-github-intro/" class="external-link uri">https://uf-repro.github.io/friendly-github-intro/</a>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 <div id="merge-conflicts" class="section level2">
 <h2 class="hasAnchor">
-<a href="#merge-conflicts" class="anchor"></a>Merge Conflicts</h2>
+<a href="#merge-conflicts" class="anchor" aria-hidden="true"></a>Merge Conflicts</h2>
 <ul>
 <li>Inviting Collaborators
 <ul>
@@ -178,11 +179,11 @@
 </li>
 </ul>
 </li>
-<li>A Simple Workflow Two people, A and B, are working together on one repo in GitHub:
+<li>Example collaboration Two people, A and B, are working together on one repo in GitHub:
 <ul>
-<li>A makes commits, A pushes the new commits to GitHub.</li>
-<li>B pulls the latest commits from A, works on new commits, and pushes their new commits back to GitHub.</li>
-<li>A pulls the latest commits from B, works on new commits, etc.</li>
+<li>A creates new commits, A pushes the commits to GitHub.</li>
+<li>B pulls the latest commits from A (via GitHub), creates new commits, and pushes their commits back to GitHub.</li>
+<li>A pulls the latest commits from B (via GitHub), creates new commits, etc.</li>
 </ul>
 </li>
 <li>What happens if you forget to pull? You get a warning when you try to push to GitHub. <img src="newer-commits-warning.png" title="A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'" alt="A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'">
@@ -194,9 +195,9 @@
 <ul>
 <li>A and B start with commit: <code>{orig}</code>
 </li>
-<li>A makes changes to <code>{orig}</code> &amp; commits <code>{a}</code>
+<li>A makes changes &amp; commits <code>{a}</code>
 </li>
-<li>B makes changes to <code>{orig}</code> &amp; commits <code>{b}</code>
+<li>B makes changes &amp; commits <code>{b}</code>
 </li>
 <li>
 <code>git merge</code> combines <code>{a}</code> and <code>{b}</code> into a new commit <code>{c}</code>, that contains both sets of changes.</li>
@@ -206,24 +207,25 @@
 </li>
 <li>Merging (automatically)
 <ul>
-<li>if the changes are in different files OR different parts of the same files
+<li>IF the changes are in different files OR different parts of the same files
 <ul>
-<li>git is generally able to combine the changes without further intervention</li>
+<li>git is generally able to create the merged commit without further intervention</li>
 </ul>
 </li>
-<li>if git is unable to merge automatically, then it is a <code>merge conflict</code>
+<li>if git is unable to merge automatically, then there is a <code>merge conflict</code>
 </li>
 </ul>
 </li>
 <li>Resolving merge conflicts
 <ul>
-<li>when git cannot combine the changes automatically, you must manually create the merged file: <img src="merge-conflict.png" title="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version." alt="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version.">
+<li>when git cannot combine the changes automatically, you must tell it what the files should be in the merge commit.</li>
+<li>for a text file: <img src="merge-conflict.png" title="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version." alt="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version.">
 </li>
 </ul>
 </li>
 <li>Resolving merge conflicts 2
 <ul>
-<li>After the conflicts are resolved, you need to create a new commit with the merged edits.</li>
+<li>After the conflicts are resolved, you can proceed with the merge and create the merged commit.</li>
 <li>This merged commit can then be pushed to github without issue.</li>
 <li>For non-text files, you need to choose a version of the file for the merge commit.
 <ul>
@@ -240,7 +242,7 @@
 </li>
 <li><strong>collaborators make changes rarely</strong></li>
 <li>everyone knows the steps to pull, commit, push.</li>
-<li>everyone communicates updates that others should pull from GitHub.</li>
+<li>everyone communicates that there are updates for others to pull from GitHub.</li>
 </ul>
 </li>
 </ul>
@@ -249,7 +251,7 @@
 </div>
 <div id="github-flow" class="section level2">
 <h2 class="hasAnchor">
-<a href="#github-flow" class="anchor"></a>GitHub Flow</h2>
+<a href="#github-flow" class="anchor" aria-hidden="true"></a>GitHub Flow</h2>
 <ul>
 <li>Essentials of GitHub Flow
 <ul>
@@ -271,26 +273,27 @@
 </div>
 <div id="navigating-branches" class="section level2">
 <h2 class="hasAnchor">
-<a href="#navigating-branches" class="anchor"></a>Navigating Branches</h2>
+<a href="#navigating-branches" class="anchor" aria-hidden="true"></a>Navigating Branches</h2>
 <ul>
 <li>What is a Branch?
 <ul>
-<li>A <code>branch</code> is a label for a set of commits. <img src="git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%"> [img: https://www.atlassian.com/git/tutorials/using-branches]</li>
+<li>A <code>branch</code> is a label for a set of commits. <img src="git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%"> [img: <a href="https://www.atlassian.com/git/tutorials/using-branches" class="external-link uri">https://www.atlassian.com/git/tutorials/using-branches</a>]</li>
 </ul>
 </li>
 <li>If Git is a time machine that lets you navigate to different times (commits), then <strong>branches are alternate timelines</strong>.</li>
 <li>How do branches work?
 <ul>
-<li>By default, you are in the primary branch.
+<li>You start in the primary branch.
 <ul>
-<li>each commit includes changes from the previous commit</li>
-<li>result: a sequence of project versions</li>
+<li>each commit records changes from the previous commit</li>
+<li><strong>result: a sequence of project versions</strong></li>
 </ul>
 </li>
-<li>When you want multiple sequences of project versions:
+<li>When you want multiple sequences:
 <ul>
 <li>create a new branch</li>
-<li>merge when ready (or discard useless branches)</li>
+<li>merge when ready<br>
+(or discard useless branches)</li>
 </ul>
 </li>
 </ul>
@@ -305,7 +308,7 @@
 </div>
 <div id="merging-branches" class="section level2">
 <h2 class="hasAnchor">
-<a href="#merging-branches" class="anchor"></a>Merging Branches</h2>
+<a href="#merging-branches" class="anchor" aria-hidden="true"></a>Merging Branches</h2>
 <ul>
 <li>Merging (branches)
 <ul>
@@ -339,7 +342,7 @@
 </div>
 <div id="community-oriented-development-on-github" class="section level2">
 <h2 class="hasAnchor">
-<a href="#community-oriented-development-on-github" class="anchor"></a>Community-oriented Development on GitHub</h2>
+<a href="#community-oriented-development-on-github" class="anchor" aria-hidden="true"></a>Community-oriented Development on GitHub</h2>
 <ul>
 <li>Issues
 <ul>
@@ -360,10 +363,10 @@
 </li>
 </ul>
 </li>
-<li>Contributing to OS Combining this all together, “Fork and PR” is a workflow for contributing to someone else’s project:
+<li>Contributing to OS Combining this all together, “Fork and PR” is a workflow for contributing to someone else’s project (without write access):
 <ol style="list-style-type: decimal">
 <li>fork a repo to your GitHub account</li>
-<li>make changes that you want on your GitHub account</li>
+<li>make changes on the repo in your GitHub account</li>
 <li>create a pull request to ask for those changes to be merged into the original project repo ## Thanks</li>
 </ol>
 </li>
@@ -371,7 +374,7 @@
 <li>Contact me for additional questions or consultation requests!</li>
 <li>Check back in on the libguide for more modules and contact info:
 <ul>
-<li>https://guides.uflib.ufl.edu/reproducibility</li>
+<li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li>
 </ul>
 </li>
 </ul>
@@ -396,7 +399,7 @@
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>

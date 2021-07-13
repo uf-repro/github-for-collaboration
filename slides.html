@@ -17,13 +17,13 @@ class: inverse, center, middle
 # Using GitHub for Collaboration
 ### Hao Ye
 ### Health Science Center Libraries, University of Florida
-### (updated: 2021-03-18)
+### (updated: 2021-07-13)
 
 ---
 # Motivations
 
-* One of the advantages for using version control is managing collaborative work.
-* Git is a tool that accommodates many different styles of collaboration... not all of these are suitable for small research teams.
+* Version control can help you manage collaborative work.
+* There are many ways to collaborate using Git... not all of these are suitable for small research teams!
 * "GitHub flow" is a lightweight workflow that scales well for individuals and small teams.
 
 ---
@@ -61,12 +61,12 @@ class: inverse, center, middle
 &lt;img src="github-manage-access.png" title="A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'." alt="A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'."  /&gt;
 
 ---
-# A Simple Workflow
+# Example collaboration
 
 Two people, A and B, are working together on one repo in GitHub:
-* A makes commits, A pushes the new commits to GitHub.
-* B pulls the latest commits from A, works on new commits, and pushes their new commits back to GitHub.
-* A pulls the latest commits from B, works on new commits, etc.
+* A creates new commits, A pushes the commits to GitHub.
+* B pulls the latest commits from A (via GitHub), creates new commits, and pushes their commits back to GitHub.
+* A pulls the latest commits from B (via GitHub), creates new commits, etc.
 
 ---
 # What happens if you forget to pull?
@@ -80,30 +80,31 @@ You get a warning when you try to push to GitHub.
 
 * `git merge` combines the changes from diverging commits:
   - A and B start with commit: `{orig}`
-  - A makes changes to `{orig}` &amp; commits `{a}`
-  - B makes changes to `{orig}` &amp; commits `{b}`
+  - A makes changes &amp; commits `{a}`
+  - B makes changes &amp; commits `{b}`
   - `git merge` combines `{a}` and `{b}` into a new commit `{c}`, that contains both sets of changes.
 
 ---
 # Merging (automatically)
 
-* if the changes are in different files
+* IF the changes are in different files
 
   OR different parts of the same files
-  - git is generally able to combine the changes without further intervention
+  - git is generally able to create the merged commit without further intervention
 
-* if git is unable to merge automatically, then it is a `merge conflict`
+* if git is unable to merge automatically, then there is a `merge conflict`
 
 ---
 # Resolving merge conflicts
 
-* when git cannot combine the changes automatically, you must manually create the merged file:
+* when git cannot combine the changes automatically, you must tell it what the files should be in the merge commit.
+* for a text file:
 &lt;img src="merge-conflict.png" title="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version." alt="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version."  /&gt;
 
 ---
 # Resolving merge conflicts 2
 
-* After the conflicts are resolved, you need to create a new commit with the merged edits.
+* After the conflicts are resolved, you can proceed with the merge and create the merged commit.
 * This merged commit can then be pushed to github without issue.
 * For non-text files, you need to choose a version of the file for the merge commit.
   - e.g. open an image editor to edit the image file and incorporate changes from the two separate commits.
@@ -115,7 +116,7 @@ You get a warning when you try to push to GitHub.
   - there is **one primary contributor**
   - **collaborators make changes rarely**
   - everyone knows the steps to pull, commit, push.
-  - everyone communicates updates that others should pull from GitHub.
+  - everyone communicates that there are updates for others to pull from GitHub.
 
 ---
 class: inverse, center, middle
@@ -164,12 +165,12 @@ If Git is a time machine that lets you navigate to different times (commits), th
 ---
 # How do branches work?
 
-* By default, you are in the primary branch.
-  - each commit includes changes from the previous commit
-  - result: a sequence of project versions
-* When you want multiple sequences of project versions:
+* You start in the primary branch.
+  - each commit records changes from the previous commit
+  - **result: a sequence of project versions**
+* When you want multiple sequences:
   - create a new branch
-  - merge when ready
+  - merge when ready  
   (or discard useless branches)
 
 ---
@@ -252,9 +253,9 @@ class: center, middle
 ---
 # Contributing to OS
 
-Combining this all together, "Fork and PR" is a workflow for contributing to someone else's project:
+Combining this all together, "Fork and PR" is a workflow for contributing to someone else's project (without write access):
 1. fork a repo to your GitHub account
-2. make changes that you want on your GitHub account
+2. make changes on the repo in your GitHub account
 3. create a pull request to ask for those changes to be merged into the original project repo
 
 ---
