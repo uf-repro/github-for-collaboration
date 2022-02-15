@@ -53,8 +53,8 @@ class: inverse, center, middle
 # Motivations
 
 * Version control can help you manage collaborative work.
-* There are many ways to collaborate using Git... not all of these are suitable for small research teams!
-* "GitHub flow" is a lightweight workflow that scales well for individuals and small teams.
+* There are many ways to collaborate using Git... not all of these are ideal for small research teams!
+* "GitHub flow" is a lightweight workflow for individuals and small teams.
 
 ---
 # Learning Outcomes
@@ -107,10 +107,10 @@ knitr::include_graphics("newer-commits-warning.png")
 ---
 # Merging
 
-* `git merge` combines the changes from diverging commits:
+* `git merge` combines the changes from commits:
   - A and B start with commit: `{orig}`
-  - A makes changes & commits `{a}`
-  - B makes changes & commits `{b}`
+  - A makes commit `{a}`
+  - B makes commit `{b}`
   - `git merge` combines `{a}` and `{b}` into a new commit `{c}`, that contains both sets of changes.
 
 ---
@@ -126,7 +126,7 @@ knitr::include_graphics("newer-commits-warning.png")
 ---
 # Resolving merge conflicts
 
-* when git cannot combine the changes automatically, you must tell it what the files should be in the merge commit.
+* when git cannot combine the changes automatically, you must tell it what the correct contents should be for the merge commit.
 * for a text file:
 ```{r, echo = FALSE, fig.alt = "A screenshot of BBedit showing the merge conflict. Line 6 is '<<<<<<< HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '>>>>>>>' followed by a hash, indicating the end of the second version."}
 knitr::include_graphics("merge-conflict.png")
@@ -135,9 +135,9 @@ knitr::include_graphics("merge-conflict.png")
 ---
 # Resolving merge conflicts 2
 
-* After the conflicts are resolved, you can proceed with the merge and create the merged commit.
+* After all the conflicts are resolved, you can create the merged commit.
 * This merged commit can then be pushed to github without issue.
-* For non-text files, you need to choose a version of the file for the merge commit.
+* For non-text files, git will not show you the differences across versions - you will need to combine changes yourself.
   - e.g. open an image editor to edit the image file and incorporate changes from the two separate commits.
 
 ---
@@ -157,7 +157,7 @@ class: inverse, center, middle
 ---
 # Essentials of GitHub Flow
 
-* Use `branches` to store work progress. 
+* Use `branches` to store all work progress. 
 * Merge branches back to the primary branch when the work for that branch is complete.
 
 ```{r, echo = FALSE, fig.alt = "A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works."}
@@ -203,10 +203,9 @@ If Git is a time machine that lets you navigate to different times (commits), th
 * You start in the primary branch.
   - each commit records changes from the previous commit
   - **result: a sequence of project versions**
-* When you want multiple sequences:
-  - create a new branch
-  - merge when ready  
-  (or discard useless branches)
+* Branches let you store multiple sequences.
+  - create a new branch - good for experiments
+  - merge if/when you want
 
 ---
 # Creating new branches (GitHub)
@@ -241,7 +240,7 @@ class: inverse, center, middle
 # Merging (branches)
 
 * Nearly the same as merging commits:
-  - merge the last commit on another branch to the current branch.
+  - merge all the changes from another branch to the current branch.
 
 1. **switch to the branch** that will hold the merged result
 2. **merge from** the other branch
@@ -254,9 +253,10 @@ class: center, middle
 ---
 # Pull Request (GitHub)
 
-* recommended practice for merges on GitHub
-* lets you document the merge
-  - can request official "review"
+Pull Requests:
+* are recommended practice for merges on GitHub
+* let you document the merge
+  - you can request official "review"
   - other collaborators can comment, make further changes
 
 ---
