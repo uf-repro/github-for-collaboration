@@ -272,6 +272,7 @@ class: inverse, center, middle
 ---
 # Issues
 
+`Issues` are conversations on GitHub:
 * reported bugs, feature requests, etc.
 * anyone can contribute to discussion
 * can be referred to by number in commits and pull requests
@@ -286,7 +287,7 @@ class: center, middle
 
 * How do you contribute to other people's projects?
   - Fork = clone a repo on GitHub
-  - Forks retain memory of original repo (and cannot have their own issues)
+  - Forks retain memory of original repo
   - Pull Requests can include merges from across forks.
 
 ---
