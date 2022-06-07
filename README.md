@@ -22,8 +22,8 @@ practice for collaboration.
 
 This lesson assumes you:
 
-  - have some familiarity making *repos* and *commits*
-  - know how to synchronize repos from your computer to GitHub
+-   have some familiarity making *repos* and *commits*
+-   know how to synchronize repos from your computer to GitHub
 
 Such as via <https://uf-repro.github.io/friendly-github-intro/>
 
@@ -31,8 +31,8 @@ Such as via <https://uf-repro.github.io/friendly-github-intro/>
 
 By the end of the workshop, participants will be able to:
 
-  - describe how merge conflicts originate and how to resolve them
-  - apply the “GitHub flow” workflow for collaborating
-  - create and navigate branches on GitHub and using GitHub Desktop
-  - create and merge pull requests
-  - understand “forks” and open-source-community development on GitHub
+-   describe how merge conflicts originate and how to resolve them
+-   apply the “GitHub flow” workflow for collaborating
+-   create and navigate branches on GitHub and using GitHub Desktop
+-   create and merge pull requests
+-   understand “forks” and open-source-community development on GitHub

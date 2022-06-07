@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 lesson_title <- "Using GitHub for Collaboration"
 lesson_description <- "This workshop will introduce how to use Git and GitHub as a platform for collaboration. Attendees will learn the essentials of Git branches, merge conflicts and how to resolve them, and the GitHub Flow workflow practice for collaboration."
+lesson_version <- "1.1.2"
 lesson_keywords <- c("Open Educational Resources",
                      "Research Support Skills",
                      "Git",
@@ -24,16 +25,14 @@ lesson_keywords <- c("Open Educational Resources",
                      "Version Control",
                      "Collaboration", 
                      "Workshop")
+folder_name <- basename(usethis::proj_get())
+package_name <- gsub("-", ".", folder_name)
 
-desc::desc_set(Title = lesson_title, 
-               Description = lesson_description)
-
-zenodo_json <- jsonlite::read_json(".zenodo.json")
-zenodo_json$title <- lesson_title
-zenodo_json$description <- lesson_description
-zenodo_json$keywords <- as.list(lesson_keywords)
-jsonlite::write_json(zenodo_json, ".zenodo.json", 
-                     auto_unbox = TRUE, pretty = TRUE)
+desc::desc_set(Package = package_name, 
+               Title = lesson_title, 
+               Description = lesson_description, 
+               Version = lesson_version, 
+               "X-schema.org-keywords" = paste(lesson_keywords, collapse = ", "))
 ```
 
 # `r lesson_title`
@@ -81,3 +80,6 @@ By the end of the workshop, participants will be able to:
 
 `r outcomes_text`
 
+```{r make cff file, include = FALSE}
+cffr::cff_write(keys = list("type" = "lesson"))
+```

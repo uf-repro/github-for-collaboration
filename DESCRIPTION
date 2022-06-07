@@ -1,6 +1,6 @@
-Package: github4collaboration
+Package: github.for.collaboration
 Title: Using GitHub for Collaboration
-Version: 1.1.1
+Version: 1.1.2
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
@@ -27,3 +27,4 @@ learningOutcomes: * describe how merge conflicts originate and how to resolve th
 prerequisites: * have some familiarity making *repos* and *commits*
  * know how to synchronize repos from your computer to GitHub
 priorCourse: https://uf-repro.github.io/friendly-github-intro/
+X-schema.org-keywords: Open Educational Resources, Research Support Skills, Git, GitHub, Version Control, Collaboration, Workshop
