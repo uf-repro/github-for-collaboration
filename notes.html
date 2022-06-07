@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">Using GitHub for Collaboration</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.2</span>
       </span>
     </div>
 
@@ -59,24 +59,20 @@
     </div>
 
 <div id="syllabus" class="section level1">
-
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-02-15)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-06-07)</p>
 <div class="section level2">
 <h2 id="intro">Intro<a class="anchor" aria-label="anchor" href="#intro"></a></h2>
-<ul><li>Motivations
-<ul><li>Version control can help you manage collaborative work.</li>
+<ul><li>Motivations<ul><li>Version control can help you manage collaborative work.</li>
 <li>There are many ways to collaborate using Git… not all of these are ideal for small research teams!</li>
 <li>“GitHub flow” is a lightweight workflow for individuals and small teams.</li>
 </ul></li>
-<li>Learning Outcomes
-<ul><li>describe how merge conflicts originate and how to resolve them</li>
+<li>Learning Outcomes<ul><li>describe how merge conflicts originate and how to resolve them</li>
 <li>apply the “GitHub flow” workflow for collaborating</li>
 <li>create and navigate branches on GitHub and using GitHub Desktop</li>
 <li>create and merge pull requests</li>
 <li>understand “forks” and open-source-community development on GitHub</li>
 </ul></li>
-<li>Prerequisites This lesson assumes you:
-<ul><li>have some familiarity making <em>repos</em> and <em>commits</em>
+<li>Prerequisites This lesson assumes you:<ul><li>have some familiarity making <em>repos</em> and <em>commits</em>
 </li>
 <li>know how to synchronize repos from your computer to GitHub Such as via <a href="https://uf-repro.github.io/friendly-github-intro/" class="external-link uri">https://uf-repro.github.io/friendly-github-intro/</a>
 </li>
@@ -84,26 +80,21 @@
 </ul></div>
 <div class="section level2">
 <h2 id="merge-conflicts">Merge Conflicts<a class="anchor" aria-label="anchor" href="#merge-conflicts"></a></h2>
-<ul><li>Inviting Collaborators
-<ul><li>I have a github repo, and would like to give my collaborator access to work on the project.</li>
-<li>From the github repo page:
-<ul><li>
+<ul><li>Inviting Collaborators<ul><li>I have a github repo, and would like to give my collaborator access to work on the project.</li>
+<li>From the github repo page:<ul><li>
 <code>Settings</code> -&gt; <code>Manage access</code>
 </li>
 <li>
 <code>Invite a collaborator</code> <img src="github-manage-access.png" title="A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'." alt="A screenshot of the website https://github.com/ha0ye/portalDS/settings/access, showing that the repo is visible to the public, and that only the owner can contribute to the repository. There is a green button with the text 'Invite a collaborator'."></li>
 </ul></li>
 </ul></li>
-<li>Example collaboration Two people, A and B, are working together on one repo in GitHub:
-<ul><li>A creates new commits, A pushes the commits to GitHub.</li>
+<li>Example collaboration Two people, A and B, are working together on one repo in GitHub:<ul><li>A creates new commits, A pushes the commits to GitHub.</li>
 <li>B pulls the latest commits from A (via GitHub), creates new commits, and pushes their commits back to GitHub.</li>
 <li>A pulls the latest commits from B (via GitHub), creates new commits, etc.</li>
 </ul></li>
 <li>What happens if you forget to pull? You get a warning when you try to push to GitHub. <img src="newer-commits-warning.png" title="A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'" alt="A screenshot of the warning from using GitHub Desktop when trying to push new commits to GitHub, and there are commits on GitHub that have not yet been fetched and merged locally. The warning reads 'Newer Commits on Remote; Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.'"></li>
-<li>Merging
-<ul><li>
-<code>git merge</code> combines the changes from commits:
-<ul><li>A and B start with commit: <code>{orig}</code>
+<li>Merging<ul><li>
+<code>git merge</code> combines the changes from commits:<ul><li>A and B start with commit: <code>{orig}</code>
 </li>
 <li>A makes commit <code>{a}</code>
 </li>
@@ -111,44 +102,31 @@
 </li>
 <li>
 <code>git merge</code> combines <code>{a}</code> and <code>{b}</code> into a new commit <code>{c}</code>, that contains both sets of changes.</li>
-</ul></li>
-</ul></li>
-<li>Merging (automatically)
-<ul><li>IF the changes are in different files OR different parts of the same files
-<ul><li>git is generally able to create the merged commit without further intervention</li>
-</ul></li>
+</ul></li></ul></li>
+<li>Merging (automatically)<ul><li>IF the changes are in different files OR different parts of the same files<ul><li>git is generally able to create the merged commit without further intervention</li></ul></li>
 <li>if git is unable to merge automatically, then there is a <code>merge conflict</code>
 </li>
 </ul></li>
-<li>Resolving merge conflicts
-<ul><li>when git cannot combine the changes automatically, you must tell it what the correct contents should be for the merge commit.</li>
+<li>Resolving merge conflicts<ul><li>when git cannot combine the changes automatically, you must tell it what the correct contents should be for the merge commit.</li>
 <li>for a text file: <img src="merge-conflict.png" title="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version." alt="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version."></li>
 </ul></li>
-<li>Resolving merge conflicts 2
-<ul><li>After all the conflicts are resolved, you can create the merged commit.</li>
+<li>Resolving merge conflicts 2<ul><li>After all the conflicts are resolved, you can create the merged commit.</li>
 <li>This merged commit can then be pushed to github without issue.</li>
-<li>For non-text files, git will not show you the differences across versions - you will need to combine changes yourself.
-<ul><li>e.g. open an image editor to edit the image file and incorporate changes from the two separate commits.</li>
+<li>For non-text files, git will not show you the differences across versions - you will need to combine changes yourself.<ul><li>e.g. open an image editor to edit the image file and incorporate changes from the two separate commits.</li></ul></li>
 </ul></li>
-</ul></li>
-<li>Summary
-<ul><li>This approach works pretty well when:
-<ul><li>there is <strong>one primary contributor</strong>
+<li>Summary<ul><li>This approach works pretty well when:<ul><li>there is <strong>one primary contributor</strong>
 </li>
 <li><strong>collaborators make changes rarely</strong></li>
 <li>everyone knows the steps to pull, commit, push.</li>
 <li>everyone communicates that there are updates for others to pull from GitHub.</li>
-</ul></li>
-</ul></li>
+</ul></li></ul></li>
 </ul></div>
 <div class="section level2">
 <h2 id="github-flow">GitHub Flow<a class="anchor" aria-label="anchor" href="#github-flow"></a></h2>
-<ul><li>Essentials of GitHub Flow
-<ul><li>Use <code>branches</code> to store all work progress.</li>
+<ul><li>Essentials of GitHub Flow<ul><li>Use <code>branches</code> to store all work progress.</li>
 <li>Merge branches back to the primary branch when the work for that branch is complete. <img src="github-flow.png" title="A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works." alt="A screenshot of the diagram from https://guides.github.com/introduction/flow/, showing conceptually how the 'GitHub flow' workflow works."></li>
 </ul></li>
-<li>Steps
-<ol style="list-style-type: decimal"><li>Create a branch and switch to it.</li>
+<li>Steps<ol style="list-style-type: decimal"><li>Create a branch and switch to it.</li>
 <li>Add commits with desired changes.</li>
 <li>Open a pull request (PR).</li>
 <li>Review the PR if necessary, and merge.</li>
@@ -157,17 +135,12 @@
 </ul></div>
 <div class="section level2">
 <h2 id="navigating-branches">Navigating Branches<a class="anchor" aria-label="anchor" href="#navigating-branches"></a></h2>
-<ul><li>What is a Branch?
-<ul><li>A <code>branch</code> is a label for a set of commits. <img src="git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%"> [img: <a href="https://www.atlassian.com/git/tutorials/using-branches" class="external-link uri">https://www.atlassian.com/git/tutorials/using-branches</a>]</li>
-</ul></li>
+<ul><li>What is a Branch?<ul><li>A <code>branch</code> is a label for a set of commits. <img src="git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%"> [img: <a href="https://www.atlassian.com/git/tutorials/using-branches" class="external-link uri">https://www.atlassian.com/git/tutorials/using-branches</a>]</li></ul></li>
 <li>If Git is a time machine that lets you navigate to different times (commits), then <strong>branches are alternate timelines</strong>.</li>
-<li>How do branches work?
-<ul><li>You start in the primary branch.
-<ul><li>each commit records changes from the previous commit</li>
+<li>How do branches work?<ul><li>You start in the primary branch.<ul><li>each commit records changes from the previous commit</li>
 <li><strong>result: a sequence of project versions</strong></li>
 </ul></li>
-<li>Branches let you store multiple sequences.
-<ul><li>create a new branch - good for experiments</li>
+<li>Branches let you store multiple sequences.<ul><li>create a new branch - good for experiments</li>
 <li>merge if/when you want</li>
 </ul></li>
 </ul></li>
@@ -178,20 +151,14 @@
 </ul></div>
 <div class="section level2">
 <h2 id="merging-branches">Merging Branches<a class="anchor" aria-label="anchor" href="#merging-branches"></a></h2>
-<ul><li>Merging (branches)
-<ul><li>Nearly the same as merging commits:
-<ul><li>merge all the changes from another branch to the current branch.</li>
-</ul></li>
-</ul><ol style="list-style-type: decimal"><li>
+<ul><li>Merging (branches)<ul><li>Nearly the same as merging commits:<ul><li>merge all the changes from another branch to the current branch.</li></ul></li></ul><ol style="list-style-type: decimal"><li>
 <strong>switch to the branch</strong> that will hold the merged result</li>
 <li>
 <strong>merge from</strong> the other branch</li>
 </ol></li>
 <li>DEMO (GitHub Desktop)</li>
-<li>Pull Request (GitHub) Pull Requests:
-<ul><li>are recommended practice for merges on GitHub</li>
-<li>let you document the merge
-<ul><li>you can request official “review”</li>
+<li>Pull Request (GitHub) Pull Requests:<ul><li>are recommended practice for merges on GitHub</li>
+<li>let you document the merge<ul><li>you can request official “review”</li>
 <li>other collaborators can comment, make further changes</li>
 </ul></li>
 </ul></li>
@@ -199,29 +166,22 @@
 </ul></div>
 <div class="section level2">
 <h2 id="community-oriented-development-on-github">Community-oriented Development on GitHub<a class="anchor" aria-label="anchor" href="#community-oriented-development-on-github"></a></h2>
-<ul><li>Issues <code>Issues</code> are conversations on GitHub:
-<ul><li>reported bugs, feature requests, etc.</li>
+<ul><li>Issues <code>Issues</code> are conversations on GitHub:<ul><li>reported bugs, feature requests, etc.</li>
 <li>anyone can contribute to discussion</li>
 <li>can be referred to by number in commits and pull requests</li>
 </ul></li>
 <li>DEMO</li>
-<li>Forks
-<ul><li>How do you contribute to other people’s projects?
-<ul><li>Fork = clone a repo on GitHub</li>
+<li>Forks<ul><li>How do you contribute to other people’s projects?<ul><li>Fork = clone a repo on GitHub</li>
 <li>Forks retain memory of original repo</li>
 <li>Pull Requests can include merges from across forks.</li>
-</ul></li>
-</ul></li>
-<li>Contributing to OS Combining this all together, “Fork and PR” is a workflow for contributing to someone else’s project (without write access):
-<ol style="list-style-type: decimal"><li>fork a repo to your GitHub account</li>
+</ul></li></ul></li>
+<li>Contributing to OS Combining this all together, “Fork and PR” is a workflow for contributing to someone else’s project (without write access):<ol style="list-style-type: decimal"><li>fork a repo to your GitHub account</li>
 <li>make changes on the repo in your GitHub account</li>
 <li>create a pull request to ask for those changes to be merged into the original project repo ## Thanks</li>
 </ol></li>
 <li>Let me know what content you’d like to see</li>
 <li>Contact me for additional questions or consultation requests!</li>
-<li>Check back in on the libguide for more modules and contact info:
-<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li>
-</ul></li>
+<li>Check back in on the libguide for more modules and contact info:<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li></ul></li>
 </ul></div>
 </div>
 
@@ -240,7 +200,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
 </div>
 
       </footer></div>
